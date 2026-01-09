@@ -75,7 +75,7 @@ class UtilisateurCrudController extends AbstractCrudController
     {
         /** @var Utilisateur $entityInstance */
         if ($entityInstance instanceof Utilisateur) {
-            // Hasher le mot de passe avant de persister
+            // Hasher le mot de passe 
             if ($entityInstance->getPassword()) {
                 $hashedPassword = $this->passwordHasher->hashPassword(
                     $entityInstance,

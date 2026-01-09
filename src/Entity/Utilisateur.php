@@ -32,7 +32,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 100)]
     private ?string $prenom = null;
 
-    #[ORM\OneToMany(targetEntity: Avis::class, mappedBy: 'utilisateur')]
+    #[ORM\OneToMany(targetEntity: Avis::class, mappedBy: 'utilisateur',  cascade: ["remove"])]
     private Collection $avis;
 
     #[ORM\ManyToMany(targetEntity: Evenement::class, mappedBy: 'responsables')]
